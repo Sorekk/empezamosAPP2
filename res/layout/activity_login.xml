@@ -9,12 +9,27 @@
     tools:context="com.example.empezamosapp2.LoginActivity"
     android:orientation="vertical" >
 
-    <EditText android:id="@id/login_username" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="Username" android:singleLine="true" android:layout_below="@id/login_msg" />
-    <EditText android:id="@id/login_password" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="Password" android:singleLine="true" android:layout_below="@id/login_username" android:inputType="textPassword" />
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@android:style/ButtonBar">
-        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Confirm" android:layout_weight="1.0" android:onClick="onConfirmClick" />
-        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cancel" android:layout_weight="1.0" android:onClick="onCancelClick" />
-        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Register" android:layout_weight="1.0" android:onClick="onRegisterClick" />
-    </LinearLayout>
+    <EditText
+        android:id="@+id/login_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onConfirmClick"
+        android:text="Button" />
 
 </LinearLayout>
