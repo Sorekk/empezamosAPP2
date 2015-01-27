@@ -64,7 +64,7 @@ public class LoginActivity extends Activity
   {
     if ((this.mUsername.getText().length() != 0) && (this.mPassword.getText().length() != 0))
     {
-      new login(/*Ellos tenian un null lo e quitado porque no se para que lo necesitan*/).execute(new Object[0]); /*Esto apunta a el AsyncTask no sabemos porque peta*/
+      new login(/*Ellos tenian un null lo e quitado porque no se para que lo necesitan*/).execute(new Object[0]); /*Esto apunta a el AsyncTask*/
       return;
     }
     Toast.makeText(this, "Please put username and password in the login dialog.", 1).show();
@@ -106,14 +106,14 @@ public class LoginActivity extends Activity
       //Conexion con el servidor de drupal, con las llaves de seguridad y el algorithmo de seguridad!!
       JSONServerClient localJSONServerClient = new JSONServerClient(LoginActivity.this, str1, LoginActivity.this.getString(R.string.SERVER), LoginActivity.this.getString(R.string.API_KEY), LoginActivity.this.getString(R.string.DOMAIN), LoginActivity.this.getString(R.string.ALGORITHM), Long.valueOf(Long.parseLong(LoginActivity.this.getString(R.string.SESSION_LIFETIME))));
       
-      /*comentario para ver en el logCat si entramos en el AsyncTask*/ Log.d("AsyncTask", str1);
+      /*comentario para ver en el logCat si entramos en el AsyncTask se identifica porque sale en el LogCat en azul*/ Log.d("AsyncTask", str1);
+      Log.d("AsyncTask", localJSONServerClient.toString());
       //Try catch de confiramcion de usuario con drupal, tampoco esta muy claro como funciona.
       try
       {
         String str3 = localJSONServerClient.userLogin(LoginActivity.this.mUsername.getText().toString(), LoginActivity.this.mPassword.getText().toString());
-        /*comentario para ver en el logCat si entramos en el TryCatch*/ Log.d("TryCatch", str3);
+        /*comentario para ver en el logCat si entramos en el TryCatch se identifica porque sale en el LogCat en azul*/ Log.d("TryCatch", str3);
         String str2 = str3;
-        /*comentario para ver en el logCat si entramos en el TryCatch*/ Log.d("TryCatch2", str2);
         return Boolean.valueOf(LoginActivity.storeUserInfo(localSharedPreferences, str2, LoginActivity.this, LoginActivity.this.mPassword.getText().toString()));
       }
       catch (ServiceNotAvailableException localServiceNotAvailableException)
