@@ -39,7 +39,7 @@ public class LoginActivity extends Activity
   {
     try
     {
-      //Consulta las JSON y las tranforam en objetos. No lo tengo del todo claro como funciona. Duda existencial con el "#data" que sale en http://greatbrewers.com/services/json
+      //Consulta las JSON y las tranforam en objetos. No lo tengo del todo claro como funciona. Duda existencial con el "#data" que sale en http://greatbrewers.com/services/json imagino que hay que crearlo bien en el drupal
       JSONObject localJSONObject1 = new JSONObject(new JSONObject(paramString1).getString("#data"));
       SharedPreferences.Editor localEditor = paramSharedPreferences.edit();
       localEditor.putString("sessionid", localJSONObject1.getString("sessid"));
