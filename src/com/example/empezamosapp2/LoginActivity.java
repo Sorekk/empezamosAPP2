@@ -64,7 +64,7 @@ public class LoginActivity extends Activity
   {
     if ((this.mUsername.getText().length() != 0) && (this.mPassword.getText().length() != 0))
     {
-      new login(/*Ellos tenian un null*/).execute(new Object[0]); /*Esto apunta a el AsyncTask no sabemos porque peta*/
+      new login(/*Ellos tenian un null lo e quitado porque no se para que lo necesitan*/).execute(new Object[0]); /*Esto apunta a el AsyncTask no sabemos porque peta*/
       return;
     }
     Toast.makeText(this, "Please put username and password in the login dialog.", 1).show();
@@ -113,6 +113,7 @@ public class LoginActivity extends Activity
         String str3 = localJSONServerClient.userLogin(LoginActivity.this.mUsername.getText().toString(), LoginActivity.this.mPassword.getText().toString());
         /*comentario para ver en el logCat si entramos en el TryCatch*/ Log.d("TryCatch", str3);
         String str2 = str3;
+        /*comentario para ver en el logCat si entramos en el TryCatch*/ Log.d("TryCatch2", str2);
         return Boolean.valueOf(LoginActivity.storeUserInfo(localSharedPreferences, str2, LoginActivity.this, LoginActivity.this.mPassword.getText().toString()));
       }
       catch (ServiceNotAvailableException localServiceNotAvailableException)
