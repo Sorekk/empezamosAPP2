@@ -62,9 +62,10 @@ public class LoginActivity extends Activity
 
   public void onConfirmClick(View paramView)
   {
+	  //If para mirar que no esten los campos vacios
     if ((this.mUsername.getText().length() != 0) && (this.mPassword.getText().length() != 0))
     {
-      new login(/*Ellos tenian un null lo e quitado porque no se para que lo necesitan*/).execute(new Object[0]); /*Esto apunta a el AsyncTask*/
+      new login(/*Ellos tenian un -null- lo e quitado porque no se para que lo necesitan*/).execute(new Object[0]); /*Esto apunta a el AsyncTask*/
       return;
     }
     Toast.makeText(this, "Please put username and password in the login dialog.", 1).show();
