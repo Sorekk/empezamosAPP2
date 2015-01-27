@@ -106,11 +106,12 @@ public class LoginActivity extends Activity
       //Conexion con el servidor de drupal, con las llaves de seguridad y el algorithmo de seguridad!!
       JSONServerClient localJSONServerClient = new JSONServerClient(LoginActivity.this, str1, LoginActivity.this.getString(R.string.SERVER), LoginActivity.this.getString(R.string.API_KEY), LoginActivity.this.getString(R.string.DOMAIN), LoginActivity.this.getString(R.string.ALGORITHM), Long.valueOf(Long.parseLong(LoginActivity.this.getString(R.string.SESSION_LIFETIME))));
       
+      /*comentario para ver en el logCat si entramos en el AsyncTask*/ Log.d("AsyncTask", str1);
       //Try catch de confiramcion de usuario con drupal, tampoco esta muy claro como funciona.
       try
       {
-    	  /*comentario para ver en el logCat si entramos en el AsyncTask*/ Log.d("AsyncTask", str1);
         String str3 = localJSONServerClient.userLogin(LoginActivity.this.mUsername.getText().toString(), LoginActivity.this.mPassword.getText().toString());
+        /*comentario para ver en el logCat si entramos en el TryCatch*/ Log.d("TryCatch", str3);
         String str2 = str3;
         return Boolean.valueOf(LoginActivity.storeUserInfo(localSharedPreferences, str2, LoginActivity.this, LoginActivity.this.mPassword.getText().toString()));
       }
