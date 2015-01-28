@@ -101,7 +101,7 @@ public class LoginActivity extends Activity
 
     protected Boolean doInBackground(Object[] paramArrayOfObject)
     {
-      publishProgress(new String[] { "Signing in to Greatbrewers.com ..." });
+      publishProgress(new String[] { "Signing in to Bragasasesinas.zz.mu ..." });
       String str1 = LoginActivity.this.getString(R.string.sharedpreferences_name);
       SharedPreferences localSharedPreferences = LoginActivity.this.getSharedPreferences(str1, 0);
       //Conexion con el servidor de drupal, con las llaves de seguridad y el algorithmo de seguridad!!
