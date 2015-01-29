@@ -87,10 +87,6 @@ public class LoginActivity extends Activity
   }
   
   
-  
-  
-  
-
   private class login extends AsyncTask<Object, String, Boolean>
   {
     private ProgressDialog proDialog = new ProgressDialog(LoginActivity.this);
@@ -107,13 +103,16 @@ public class LoginActivity extends Activity
       //Conexion con el servidor de drupal, con las llaves de seguridad y el algorithmo de seguridad!!
       JSONServerClient localJSONServerClient = new JSONServerClient(LoginActivity.this, str1, LoginActivity.this.getString(R.string.SERVER), LoginActivity.this.getString(R.string.API_KEY), LoginActivity.this.getString(R.string.DOMAIN), LoginActivity.this.getString(R.string.ALGORITHM), Long.valueOf(Long.parseLong(LoginActivity.this.getString(R.string.SESSION_LIFETIME))));
       
-      /*comentario para ver en el logCat si entramos en el AsyncTask se identifica porque sale en el LogCat en azul*/ Log.d("AsyncTask", str1);
-      Log.d("AsyncTask", localJSONServerClient.toString());
+      /*comentario para ver en el logCat si entramos en el AsyncTask se identifica porque sale en el LogCat en azul*/ Log.d("AsyncTaskString", str1);
+         Log.d("AsyncTaskObjeto", localJSONServerClient.toString());
       //Try catch de confiramcion de usuario con drupal, tampoco esta muy claro como funciona.
       try
       {
+    	  Log.d("TryCatch1", "Entramos en el TryCatch");
+    	  Log.d("TryCatchUser", mUsername.getText().toString());
+    	  Log.d("TryCatchPass", mPassword.getText().toString());
         String str3 = localJSONServerClient.userLogin(LoginActivity.this.mUsername.getText().toString(), LoginActivity.this.mPassword.getText().toString());
-        /*comentario para ver en el logCat si entramos en el TryCatch se identifica porque sale en el LogCat en azul*/ Log.d("TryCatch", str3);
+          Log.d("TryCatch", str3);
         String str2 = str3;
         return Boolean.valueOf(LoginActivity.storeUserInfo(localSharedPreferences, str2, LoginActivity.this, LoginActivity.this.mPassword.getText().toString()));
       }

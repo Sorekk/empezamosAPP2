@@ -12,13 +12,15 @@
     <string name="DOMAIN">greatbrewers.com</string> -->
     
     <string name="SERVER">http://bragasasesinas.zz.mu/services/json</string>
-    <string name="DOMAIN">bragasasesinas.zz.mu</string> 
+    <string name="DOMAIN">bragasasesinas.zz.mu</string>
         
     <!-- DUDAS... -->
     <!-- Hay que conseguir nuestro codigo md5 -->
+    <!-- <string name="API_KEY">1f295a2086335bb3199bd5294eef39ce</string> -->
+    
     <string name="API_KEY">56d45c3d320675e056859089aa01afff</string>
     
-    <string name="SESSION.LIFETIME">30</string>
+    <string name="SESSION.LIFETIME">1209600</string>
     <string name="sharedpreferences_name">USER_AUTH</string>
 
 </resources>
