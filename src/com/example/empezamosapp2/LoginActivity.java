@@ -37,8 +37,10 @@ public class LoginActivity extends Activity
 
   public static boolean storeUserInfo(SharedPreferences paramSharedPreferences, String paramString1, Activity paramActivity, String paramString2)
   {
+	  Log.d("Boolean", "Boolean");
     try
     {
+    	Log.d("TryCatchPrincipal1", "Entramos en el primer TryCatch!");
       //Consulta las JSON y las tranforam en objetos. No lo tengo del todo claro como funciona. Duda existencial con el "#data" que sale en http://greatbrewers.com/services/json imagino que hay que crearlo bien en el drupal
       JSONObject localJSONObject1 = new JSONObject(new JSONObject(paramString1).getString("#data"));
       SharedPreferences.Editor localEditor = paramSharedPreferences.edit();
@@ -52,6 +54,7 @@ public class LoginActivity extends Activity
       localEditor.putString("mail", localJSONObject2.getString("mail"));
       localEditor.putString("pass", paramString2);
       localEditor.commit();
+        Log.d("TryCatchPrincipal", str);
       return true;
     }
     catch (JSONException localJSONException)
@@ -62,6 +65,8 @@ public class LoginActivity extends Activity
 
   public void onConfirmClick(View paramView)
   {
+	  
+	  Log.d("Click", "Clicamos!");
 	  //If para mirar que no esten los campos vacios
     if ((this.mUsername.getText().length() != 0) && (this.mPassword.getText().length() != 0))
     {
@@ -76,6 +81,7 @@ public class LoginActivity extends Activity
 
   protected void onCreate(Bundle paramBundle)
   {
+	  Log.d("Create", "Creamos el activity");
     super.onCreate(paramBundle);
     //Llamamos la activity del XML
     setContentView(R.layout.activity_login);
@@ -100,10 +106,12 @@ public class LoginActivity extends Activity
       publishProgress(new String[] { "Signing in to Bragasasesinas.zz.mu ..." });
       String str1 = LoginActivity.this.getString(R.string.sharedpreferences_name);
       SharedPreferences localSharedPreferences = LoginActivity.this.getSharedPreferences(str1, 0);
+         Log.d("SharedPreferences", localSharedPreferences.toString());
       //Conexion con el servidor de drupal, con las llaves de seguridad y el algorithmo de seguridad!!
+         Log.d("Antes Obejto", "Antes Obejto");
       JSONServerClient localJSONServerClient = new JSONServerClient(LoginActivity.this, str1, LoginActivity.this.getString(R.string.SERVER), LoginActivity.this.getString(R.string.API_KEY), LoginActivity.this.getString(R.string.DOMAIN), LoginActivity.this.getString(R.string.ALGORITHM), Long.valueOf(Long.parseLong(LoginActivity.this.getString(R.string.SESSION_LIFETIME))));
       
-      /*comentario para ver en el logCat si entramos en el AsyncTask se identifica porque sale en el LogCat en azul*/ Log.d("AsyncTaskString", str1);
+         Log.d("AsyncTaskString", str1);
          Log.d("AsyncTaskObjeto", localJSONServerClient.toString());
       //Try catch de confiramcion de usuario con drupal, tampoco esta muy claro como funciona.
       try

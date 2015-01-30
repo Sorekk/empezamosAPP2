@@ -11,7 +11,7 @@
     <!-- <string name="SERVER">http://greatbrewers.com/services/json</string>
     <string name="DOMAIN">greatbrewers.com</string> -->
     
-    <string name="SERVER">http://bragasasesinas.zz.mu/services/json</string>
+    <string name="SERVER">http://bragasasesinas.zz.mu/services</string>
     <string name="DOMAIN">bragasasesinas.zz.mu</string>
         
     <!-- DUDAS... -->
@@ -21,6 +21,6 @@
     <string name="API_KEY">56d45c3d320675e056859089aa01afff</string>
     
     <string name="SESSION.LIFETIME">1209600</string>
-    <string name="sharedpreferences_name">USER_AUTH</string>
+    <string name="sharedpreferences_name">OAuth</string>
 
 </resources>
